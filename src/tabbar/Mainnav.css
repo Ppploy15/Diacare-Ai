@@ -1,0 +1,47 @@
+.MainNav {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    background-color: #384B70;
+    height: 90px;
+    width: 100vw;
+    border-bottom: 2px;
+}
+
+
+.MainNav a {
+    text-decoration: none;
+    color: #FCFAEE;
+    font-size: 20px;
+}
+
+.userName{
+    text-decoration: none;
+    color: #FCFAEE;
+    font-size: 20px;
+}
+
+.MainNav .logo {
+    border-radius: 100%;
+    height: 40px;
+    margin-top: center;
+    margin-left: 80px;
+    margin-right: 15px;
+}
+
+.MainNav .boxlogo {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.MainNav .box {
+    display: flex;
+    gap: 50px;
+    margin-left: auto;
+    padding-right: 80px;
+}
