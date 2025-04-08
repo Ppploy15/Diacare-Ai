@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomeUser /> },
       { path: "history", element: <History /> },
-      { path: "predict", element: <PredictUser /> },
+      { path: "predict", element: <Predict /> },
     ],
   },
 ]);
