@@ -9,7 +9,7 @@ function MainNav() {
   const navigate = useNavigate();
   const auth = getAuth();
   const db = getFirestore();
-
+  const [showContent, setShowContent] = useState(false);
   // ฟังก์ชันเพื่อดึงข้อมูลผู้ใช้จาก Firestore
   useEffect(() => {
     const user = auth.currentUser;
@@ -30,6 +30,8 @@ function MainNav() {
     navigate("/login");
   };
 
+
+
   return (
     <div className="MainNav">
       <Link to="/">
@@ -41,16 +43,24 @@ function MainNav() {
       <div className="box">
         <Link to="/user">หน้าหลัก</Link>
         <Link to="/user/predict">วิเคราะความเสี่ยง</Link>
-        <Link to="/user/history">ประวัติ</Link>
         
-        {userName ? (
-          <span className="userName">{userName}</span> // แสดงชื่อผู้ใช้
-        ) : (
-          <span>กำลังโหลด...</span> // ถ้ายังไม่มีข้อมูลชื่อผู้ใช้
-        )}
-        
-        <Link onClick={handleLogout}>ออกจากระบบ</Link>
+        <div className='button-logout' onClick={() => setShowContent(!showContent)}>
+          {userName ? (
+            <span className="userName">{userName}<img src="/images/navigate.png" /></span> // แสดงชื่อผู้ใช้
+          ) : (
+            <span>กำลังโหลด...</span> // ถ้ายังไม่มีข้อมูลชื่อผู้ใช้
+          )}
+          {showContent && (
+            <div className="dropdown-content">
+              <Link className="logout" to="/user/history">ประวัติ</Link>
+              <Link className="logout" onClick={handleLogout}>ออกจากระบบ</Link>
+              
+            </div>
+          )}
+
+        </div>
       </div>
+
     </div>
   );
 }

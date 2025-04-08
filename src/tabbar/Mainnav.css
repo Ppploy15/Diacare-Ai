@@ -18,7 +18,7 @@
     font-size: 20px;
 }
 
-.userName{
+.userName {
     text-decoration: none;
     color: #FCFAEE;
     font-size: 20px;
@@ -41,7 +41,51 @@
 
 .MainNav .box {
     display: flex;
+    align-items: center;
     gap: 50px;
     margin-left: auto;
     padding-right: 80px;
 }
+
+.MainNav .button-logout {
+    background-color: #4F709C;
+    width: 150px;
+    border: 1px solid #F0F0F0;
+    border-radius: 5px;
+    position: relative;  /* Container เป็น relative */
+    padding: 5px 10px;   /* หากต้องการเว้นขอบทั้งสองด้าน */
+    box-sizing: border-box;
+}
+
+/* เอา padding-left ออก แล้วใช้ absolute position */
+.MainNav .button-logout img {
+    position: absolute;
+    right: 10px;               /* ให้ชิดด้านขวาโดยเว้น 10px */
+    top: 50%;                 /* จัดให้อยู่กลางแนวตั้ง */
+    transform: translateY(-50%);
+    height: 15px;
+    width: auto;
+}
+
+  
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FCFAEE;
+    width: 150px;
+    border-radius: 0 0 5px 5px;
+    /* transition เพื่อให้ dropdown ถ่ายโอนอย่างนุ่มนวล (ถ้าต้องการ) */
+    transition: opacity 0.3s ease;
+    opacity: 1;
+  }
+  
+  .MainNav .logout {
+    display: flex;             
+    justify-content: center;   
+    align-items: center;
+    font-size: 18px;
+    color: #384B70;
+    padding: 5px 0;
+    text-decoration: none; /* ไม่ให้มีการขีดเส้นใต้ */
+  }
