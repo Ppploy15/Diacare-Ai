@@ -14,4 +14,7 @@ npm i react-router-dom
 npm install firebase
 ถ้าdatabaseไม่เพิ่มใน firebase ลองไปแก้ที่ database rule
 
+//buldก่อนเพื่อเอาไฟล dist มา deploy //ไม่เข้าใจไปดูคริปในไลน์
+npm run build
+
 
