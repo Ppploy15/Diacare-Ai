@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from "react-router-dom";
-import Footer from '../tabbar/Footer';
+import FooterUser from '../tabbar/FooterUser';
 import MainNavUser from '../tabbar/MainNavUser';
 import { Navigate } from "react-router-dom";
 
@@ -12,7 +12,7 @@ const LayoutUser = () => {
         <div>
             <MainNavUser />
             <Outlet />
-            <Footer />
+            <FooterUser />
 
         </div>
     )
