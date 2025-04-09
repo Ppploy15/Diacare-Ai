@@ -34,7 +34,7 @@ function MainNav() {
 
   return (
     <div className="MainNav">
-      <Link to="/">
+      <Link to="/user">
         <span className="boxlogo">
           <img className="logo" src="/images/Logo.jpg" alt="Logo" /> Diacare
         </span>
