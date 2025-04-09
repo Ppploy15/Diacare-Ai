@@ -1,0 +1,57 @@
+.history {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 90vh;
+    color: #384B70;
+  }
+  
+  .history-box {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.5);
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+  }
+  
+  .history-title {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+  }
+  
+  .history-table th, .history-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .history-table th {
+    background-color: #384B70;
+    color: #ffffff;
+  }
+  
+  .history-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .history-table tr:hover {
+    background-color: #ddd;
+  }
+  
