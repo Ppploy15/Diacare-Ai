@@ -97,7 +97,7 @@ const History = () => {
               <td>{item.smokingStatus}</td>
               <td>{item.hbA1c}</td>
               <td>{item.currentBloodSugar}</td>
-              <td>{item.predictionResult === 1 ? 'มีโอกาส' : 'ไม่มีโอกาส'}</td>
+              <td>{item.predictionResult === 1 ? 'มีความเสี่ยงเป็นโรคเบาหวาน' : 'ไม่มีความเสี่ยงเป็นโรคเบาหวาน'}</td>
             </tr>
           ))
         )}
