@@ -56,20 +56,26 @@ const Predict = () => {
   const handlePrediction = async () => {
     const bmi = calculateBMI(formData.weight, formData.height);
     const features = [
-      parseFloat(formData.age),
-      parseFloat(bmi),
-      parseFloat(formData.hbA1c),
-      parseFloat(formData.currentBloodSugar),
-      formData.hypertension ? 1 : 0,
-      formData.heartDisease ? 1 : 0,
-      formData.smokingStatus === 'Current' ? 1 : 0,
-      formData.smokingStatus === 'Ever' ? 1 : 0,
-      formData.smokingStatus === 'Former' ? 1 : 0,
-      formData.smokingStatus === 'Never' ? 1 : 0,
-      formData.smokingStatus === 'Missing' ? 1 : 0,
-      formData.gender === 'male' ? 1 : 0,
-      formData.gender === 'female' ? 1 : 0,
+      parseFloat(formData.age),                            // age
+      formData.hypertension ? 1 : 0,                       // hypertension
+      formData.heartDisease ? 1 : 0,                       // heartDisease
+      parseFloat(bmi),                                     // bmi
+      parseFloat(formData.hbA1c),                          // hbA1c
+      parseFloat(formData.currentBloodSugar),             // currentBloodSugar
+      formData.smokingStatus === 'Missing' ? 1 : 0,        // smoking_Missing
+      formData.gender === 'female' ? 1 : 0,                // gender_female
+      formData.gender === 'male' ? 1 : 0,                  // gender_male
+      formData.smokingStatus === 'Current' ? 1 : 0,        // smoking_Current
+      formData.smokingStatus === 'Ever' ? 1 : 0,           // smoking_Ever
+      formData.smokingStatus === 'Former' ? 1 : 0,         // smoking_Former
+      formData.smokingStatus === 'Never' ? 1 : 0,          // smoking_Never
+      (formData.smokingStatus !== 'Current') ? 1 : 0       // smoking_not_current
     ];
+    
+
+    // 👉 เพิ่ม console ตรงนี้
+  console.log('📦 Sending features to Python backend:', features);
+
 
     try {
       const response = await axios.post('http://127.0.0.1:5000/predict', { features });
@@ -100,7 +106,7 @@ const Predict = () => {
     <div className="predict">
       <div className="box-top">
         <div className="box-predict">
-          <h2>{userName ? ` ${userName}` : 'กรุณาล็อกอิน'}</h2>
+          <h2>วิเคราะความเสี่ยงโรคเบาหวาน</h2>
           <form>
             <div className="input-group gender-group">
               <label>
@@ -156,7 +162,6 @@ const Predict = () => {
                 <option value="Current">Current</option>
                 <option value="Former">Former</option>
                 <option value="Ever">Ever</option>
-                <option value="Missing">Missing</option>
               </select>
             </div>
 
