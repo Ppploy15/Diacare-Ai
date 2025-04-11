@@ -22,7 +22,7 @@ def predict():
         prediction_int = int(prediction[0])  # แปลงจาก numpy เป็น int ธรรมดา
 
         # ✅ ใส่ตรงนี้! แปลงค่า 0/1 เป็นข้อความ
-        message = "มีโอกาสเป็นโรคเบาหวาน" if prediction_int == 1 else "ไม่มีโอกาสเป็นโรคเบาหวาน"
+        message = "มีความเสี่ยงเป็นโรคเบาหวาน" if prediction_int == 1 else "ไม่มีความเสี่ยงเป็นโรคเบาหวาน"
 
         # ✅ ส่งค่ากลับไปทั้งตัวเลขและข้อความ
         return jsonify({
