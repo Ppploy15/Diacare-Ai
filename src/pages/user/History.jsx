@@ -70,38 +70,41 @@ const History = () => {
   return (
     <div className="history">
       <div className="history-box">
-        <h2 className="history-title">ประวัติการทำนาย</h2>
-        <table className="history-table">
-          <thead>
-            <tr>
-              <th>วันที่</th>
-              <th>ความดันโลหิตสูง</th>
-              <th>โรคหัวใจ</th>
-              <th>การสูบบุหรี่</th>
-              <th>HbA1c</th>
-              <th>ระดับน้ำตาลในเลือด</th>
-              <th>ผลทำนาย</th> {/* เพิ่มคอลัมน์ผลทำนาย */}
+  <h2 className="history-title">ประวัติการทำนาย</h2>
+  
+  <div className="history-table-container">
+    <table className="history-table">
+      <thead>
+        <tr>
+          <th>วันที่</th>
+          <th>ความดันโลหิตสูง</th>
+          <th>โรคหัวใจ</th>
+          <th>การสูบบุหรี่</th>
+          <th>HbA1c</th>
+          <th>ระดับน้ำตาลในเลือด</th>
+          <th>ผลทำนาย</th>
+        </tr>
+      </thead>
+      <tbody>
+        {historyData.length === 0 ? (
+          <tr><td colSpan="7">ไม่มีข้อมูล</td></tr>
+        ) : (
+          historyData.map((item, index) => (
+            <tr key={index}>
+              <td>{formatDate(item.date)}</td>
+              <td>{item.hypertension ? 'เป็น' : 'ไม่เป็น'}</td>
+              <td>{item.heartDisease ? 'เป็น' : 'ไม่เป็น'}</td>
+              <td>{item.smokingStatus}</td>
+              <td>{item.hbA1c}</td>
+              <td>{item.currentBloodSugar}</td>
+              <td>{item.predictionResult === 1 ? 'มีโอกาส' : 'ไม่มีโอกาส'}</td>
             </tr>
-          </thead>
-          <tbody>
-            {historyData.length === 0 ? (
-              <tr><td colSpan="7">ไม่มีข้อมูล</td></tr>
-            ) : (
-              historyData.map((item, index) => (
-                <tr key={index}>
-                  <td>{formatDate(item.date)}</td>
-                  <td>{item.hypertension ? 'เป็น' : 'ไม่เป็น'}</td>
-                  <td>{item.heartDisease ? 'เป็น' : 'ไม่เป็น'}</td>
-                  <td>{item.smokingStatus}</td>
-                  <td>{item.hbA1c}</td>
-                  <td>{item.currentBloodSugar}</td>
-                  <td>{item.predictionResult === 1 ? 'มีโอกาส' : 'ไม่มีโอกาส'}</td> {/* แสดงผลทำนาย */}
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      </div>
+          ))
+        )}
+      </tbody>
+    </table>
+  </div>
+</div>
     </div>
   );
 };
