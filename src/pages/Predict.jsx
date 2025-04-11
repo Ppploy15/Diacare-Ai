@@ -71,10 +71,10 @@ const Predict = () => {
       formData.smokingStatus === 'Never' ? 1 : 0,          // smoking_Never
       (formData.smokingStatus !== 'Current') ? 1 : 0       // smoking_not_current
     ];
-    
+
 
     // 👉 เพิ่ม console ตรงนี้
-  console.log('📦 Sending features to Python backend:', features);
+    console.log('📦 Sending features to Python backend:', features);
 
 
     try {
@@ -111,15 +111,15 @@ const Predict = () => {
             <div className="input-group gender-group">
               <label>
                 เพศ:
-                  <input
-                    type="radio"
-                    name="gender"
-                    value="male"
-                    checked={formData.gender === 'male'}
-                    onChange={handleChange}
-                  />
-                  ชาย
-              
+                <input
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  checked={formData.gender === 'male'}
+                  onChange={handleChange}
+                />
+                ชาย
+
                 <input
                   type="radio"
                   name="gender"
@@ -131,7 +131,7 @@ const Predict = () => {
 
               </label>
               <label>อายุ:
-              <input className="input-age" type="number" name="age" value={formData.age} onChange={handleChange} />
+                <input className="input-age" type="number" name="age" value={formData.age} onChange={handleChange} />
               </label>
             </div>
 
@@ -166,12 +166,12 @@ const Predict = () => {
             </div>
 
             <div className="input-group">
-              <label>ระดับน้ำตาล HbA1c (mmol/mol):</label>
+              <label>ค่าเฉลี่ยน้ำตาลสะสม (HbA1c) (%):</label>
               <input className="input-sweet" type="number" name="hbA1c" value={formData.hbA1c} onChange={handleChange} />
             </div>
 
             <div className="input-group">
-              <label>ระดับน้ำตาลในเลือดปัจจุบัน (mmol/mol):</label>
+              <label>ระดับน้ำตาลในเลือด (Glucose) (mg/dL):</label>
               <input className="input-sweet" type="number" name="currentBloodSugar" value={formData.currentBloodSugar} onChange={handleChange} />
             </div>
 
