@@ -7,7 +7,6 @@ import Register from "../pages/auth/Register";
 import Layout from "../Layout.jsx/Layout";
 import LayoutUser from "../Layout.jsx/LayoutUser";
 import HomeUser from "../pages/user/HomeUser";
-import PredictUser from "../pages/user/PredictUser";
 import History from "../pages/user/History";
 
 const router = createBrowserRouter([
