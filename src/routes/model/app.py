@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)
 
 # โหลดโมเดล
-with open('xgboost_best_20250312_001315.pkl', 'rb') as file:
+with open('xgboost_best_20250411_151050.pkl', 'rb') as file:
     model = pickle.load(file)
 
 @app.route('/predict', methods=['POST'])
